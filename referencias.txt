@@ -1,0 +1,5 @@
+https://www.w3schools.com/sql/sql_update.asp
+https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date
+https://www.codigofonte.com.br/artigos/30-plugins-de-jquery-e-ajax-para-autocomplete
+https://api.jquery.com/data/
+https://api.jquery.com/find/
