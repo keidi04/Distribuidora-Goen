@@ -27,6 +27,7 @@
 <script>
 function enviaTamanho(nomeDoProduto) {
       document.getElementById('produtoNome').value = nomeDoProduto ;
+      console.log("oi");
 }
 </script>
 
