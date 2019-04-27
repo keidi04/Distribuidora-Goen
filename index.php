@@ -2,18 +2,23 @@
 <?php include("cabecalho.php")
 ?>
 <?php
-if(isset($_GET["login"]) && $_GET["login"]==true) {
-?>
-<p class="alert-success">Logado com sucesso!</p>
+if (isset($_GET["login"]) && $_GET["login"] ==TRUE) {
+    ?>
+<p class="alert-success">Logado com Sucesso !</p>
+<?php } ?>
+
 <?php
-}
-?>
+if (isset($_GET["login"]) && $_GET["login"] ==false) {
+    ?>
+    <p class="alert-danger">Login ou senha Inválidos !</p>
+<?php } ?>
+
 <?php
-if(isset($_GET["login"]) && $_GET["login"]==false) {
+if(isset($_COOKIE["usuario_logado"])) {
 ?>
-<p class="alert-danger">Usuário ou senha inválida!</p>
+<p class="text-success">Você está logado como <?= $_COOKIE["usuario_logado"] ?></p>
 <?php
-}
+} else {
 ?>
   <h2>Login</h2>
             <form action="login.php" method="post">
@@ -32,5 +37,8 @@ if(isset($_GET["login"]) && $_GET["login"]==false) {
                 </tr>
             </table>
             </form>
+<?php
+}
+?>
 <?php include("rodape.php")?>
 </html>
