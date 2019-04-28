@@ -2,6 +2,7 @@
 <?php include("cabecalho.php");
 include("conecta.php");
 include("banco-produto.php");
+include("logica-usuario.php");
 $codigoDoProduto = $_POST['codigoDoProduto'];
 $nomeDoProduto = $_POST['nomeDoProduto'];
 $precoDeCusto = $_POST['precoDeCusto'];
@@ -12,6 +13,8 @@ $dataDeValidade = $_POST['dataDeValidade'];
 $categoria_id = $_POST['categoria_id'];
 $codigoDeBarra = $_POST['codigoDeBarra'];
 $descricao = $_POST['descricao'];
+
+verificaUsuario();
 //function console_log( $data ){
  // echo '<script>';
  // echo 'console.log('. json_encode( $data ) .')';

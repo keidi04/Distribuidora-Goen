@@ -9,8 +9,11 @@
     include("conecta.php");
     include("banco-categoria.php");
     include("banco-tipo-de-volume.php");
+    include("logica-usuario.php");
     $categorias = listaCategorias($conexao);
     $tiposDeVolume = listaTiposDeVolume($conexao);
+
+    verificaUsuario();
     ?>
 
 	<h1>Formulário de cadastro</h1>
