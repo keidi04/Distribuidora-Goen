@@ -6,6 +6,8 @@
     include("banco-produto.php");
     include("banco-tipo-de-volume.php");
     include("banco-tipo-de-processo.php");
+    include("logica-usuario.php");
+    verificaUsuario();
     $tiposDeVolume = listaTiposDeVolume($conexao);
     $tiposDeProcesso = listaProcessos($conexao);
     $produtos = listaProduto($conexao);

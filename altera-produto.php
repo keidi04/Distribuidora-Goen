@@ -1,6 +1,8 @@
 <?php include("cabecalho.php");         
  include("conecta.php");            
  include("banco-produto.php"); 
+ include("logica-usuario.php");
+ verificaUsuario();
 $id = $_POST['id'];
 $codigoDoProduto = $_POST['codigoDoProduto'];
 $nomeDoProduto = $_POST['nomeDoProduto'];
