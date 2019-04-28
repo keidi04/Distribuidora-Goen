@@ -3,6 +3,13 @@
 include("logica-usuario.php");
 ?>
 <?php
+     if(isset($_GET["logout"]) && $_GET["logout"]==true) {
+?>
+    <p class="alert-success">Deslogado com sucesso</p>
+<?php
+     }
+?>
+<?php
 if(isset($_GET["falhaDeSeguranca"])) {
 ?>
   <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
@@ -25,6 +32,7 @@ if (isset($_GET["login"]) && $_GET["login"] ==false) {
 if(usuarioEstaLogado()) {
 ?>
 <p class="text-success">Você está logado como <?=usuarioLogado() ?></p>
+<a href="logout.php">Deslogar</a></p>
 <?php
 } else {
 ?>
