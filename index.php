@@ -10,23 +10,20 @@ include("logica-usuario.php");
      }
 ?>
 <?php
-if(isset($_GET["falhaDeSeguranca"])) {
+if(isset($_SESSION["danger"])) {
 ?>
-  <p class="alert-danger">Você não tem acesso a esta funcionalidade!</p>
+    <p class="alert-danger"><?= $_SESSION["danger"]?></p>
 <?php
-}
+    unset($_SESSION["danger"]);
+     }
 ?>
 <?php
-if (isset($_GET["login"]) && $_GET["login"] ==TRUE) {
-    ?>
-<p class="alert-success">Logado com Sucesso !</p>
-<?php } ?>
-
+     if(isset($_SESSION["success"])) {
+?>
+    <p class="alert-success"><?= $_SESSION["success"]?></p>
 <?php
-if (isset($_GET["login"]) && $_GET["login"] ==false) {
-    ?>
-    <p class="alert-danger">Login ou senha Inválidos !</p>
-<?php } ?>
+        unset($_SESSION["success"]);
+     } ?>
 
 <?php
 if(usuarioEstaLogado()) {

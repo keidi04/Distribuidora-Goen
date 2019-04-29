@@ -7,7 +7,8 @@ function usuarioEstaLogado() {
 
 function verificaUsuario() {
   if(!usuarioEstaLogado()) {
-     header("Location: index.php?falhaDeSeguranca=1");
+     $_SESSION["danger"] = "Você não tem acesso a esta funcionalidade.";
+     header("Location: index.php");
      die();
   }
 }
@@ -20,4 +21,5 @@ function logaUsuario($nome) {
 }
 function logout() {
     session_destroy();
+    session_start();
 }
