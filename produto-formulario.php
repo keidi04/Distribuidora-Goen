@@ -5,11 +5,10 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-	<?php include("cabecalho.php");
-    include("conecta.php");
-    include("banco-categoria.php");
-    include("banco-tipo-de-volume.php");
-    include("logica-usuario.php");
+	<?php require_once("cabecalho.php");
+    require_once("banco-categoria.php");
+    require_once("banco-tipo-de-volume.php");
+    require_once("logica-usuario.php");
     $categorias = listaCategorias($conexao);
     $tiposDeVolume = listaTiposDeVolume($conexao);
     $produtos = array();

@@ -1,12 +1,11 @@
 
 <?php 
-	include("cabecalho.php");
-    include("conecta.php");
-    include("banco-categoria.php");
-    include("banco-produto.php");
-    include("banco-tipo-de-volume.php");
-    include("banco-tipo-de-processo.php");
-    include("logica-usuario.php");
+	require_once("cabecalho.php");
+    require_once("banco-categoria.php");
+    require_once("banco-produto.php");
+    require_once("banco-tipo-de-volume.php");
+    require_once("banco-tipo-de-processo.php");
+    require_once("logica-usuario.php");
 
     verificaUsuario();
     $tiposDeVolume = listaTiposDeVolume($conexao);

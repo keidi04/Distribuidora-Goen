@@ -1,4 +1,5 @@
 <?php  
+require_once("conecta.php");
 function listaProduto($conexao){
 	$query = "select p.*, c.categoria,tipoProcesso.processo, cliente.razaoSocial, tipoVolume.volume as volume from produtos as p 
 join categorias as c on p.categoria_id = c.id
