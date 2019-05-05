@@ -19,12 +19,26 @@ function buscaProduto($conexao, $id) {
 }
 
 function alteraProduto($conexao,$id,$codigoDoProduto, $nome, $precoDeCusto,$precoDeVenda,$tipoDeVolume_id, $quantidade, $dataDeValidade, $categoria_id,$codigoDeBarra,$descricao) {
+    $codigoDoProduto = mysqli_real_escape_string($conexao, $codigoDoProduto);
+    $nome = mysqli_real_escape_string($conexao, $nome);
+    $precoDeCusto = mysqli_real_escape_string($conexao, $precoDeCusto);
+    $precoDeVenda = mysqli_real_escape_string($conexao, $precoDeVenda);
+    $quantidade = mysqli_real_escape_string($conexao, $quantidade);
+    $codigoDeBarra = mysqli_real_escape_string($conexao, $codigoDeBarra);
+    $descricao = mysqli_real_escape_string($conexao, $descricao);
     $query = "update produtos set codigoDoProduto = {$codigoDoProduto}, produto = '{$nome}', precoDeCusto = {$precoDeCusto}, precoDeVenda = {$precoDeVenda},tipoDeVolume_id = {$tipoDeVolume_id}, quantidade = {$quantidade}, dataDeValidade = '{$dataDeValidade}', categoria_id= {$categoria_id}, codigoDeBarra = {$codigoDeBarra}, descricao = '{$descricao}' where id = {$id}";
     return mysqli_query($conexao, $query);
 }
 
 function insereProduto($conexao,$codigoDoProduto, $nome, $precoDeCusto,$precoDeVenda,$tipoDeVolume_id, $quantidade, $dataDeValidade, $categoria_id,$codigoDeBarra,$descricao) {
-$query = "insert into `produtos` (`codigoDoProduto`, `produto`, `precoDeCusto`, `precoDeVenda`, `tipoDeVolume_id`, `quantidade`, `dataDeValidade`, `categoria_id`, `codigoDeBarra`, `descricao`) values ({$codigoDoProduto},'{$nome}',{$precoDeCusto},{$precoDeVenda},{$tipoDeVolume_id},{$quantidade},'{$dataDeValidade}',{$categoria_id},{$codigoDeBarra},'{$descricao}')";
+    $codigoDoProduto = mysqli_real_escape_string($conexao, $codigoDoProduto);
+    $nome = mysqli_real_escape_string($conexao, $nome);
+    $precoDeCusto = mysqli_real_escape_string($conexao, $precoDeCusto);
+    $precoDeVenda = mysqli_real_escape_string($conexao, $precoDeVenda);
+    $quantidade = mysqli_real_escape_string($conexao, $quantidade);
+    $codigoDeBarra = mysqli_real_escape_string($conexao, $codigoDeBarra);
+    $descricao = mysqli_real_escape_string($conexao, $descricao);
+    $query = "insert into `produtos` (`codigoDoProduto`, `produto`, `precoDeCusto`, `precoDeVenda`, `tipoDeVolume_id`, `quantidade`, `dataDeValidade`, `categoria_id`, `codigoDeBarra`, `descricao`) values ({$codigoDoProduto},'{$nome}',{$precoDeCusto},{$precoDeVenda},{$tipoDeVolume_id},{$quantidade},'{$dataDeValidade}',{$categoria_id},{$codigoDeBarra},'{$descricao}')";
 	$resultadoDaInsercao = mysqli_query($conexao, $query);
 	return $resultadoDaInsercao;
 }
