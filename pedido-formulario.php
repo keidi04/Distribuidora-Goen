@@ -7,6 +7,7 @@
     include("banco-tipo-de-volume.php");
     include("banco-tipo-de-processo.php");
     include("logica-usuario.php");
+
     verificaUsuario();
     $tiposDeVolume = listaTiposDeVolume($conexao);
     $tiposDeProcesso = listaProcessos($conexao);
@@ -119,7 +120,7 @@
             <td>Descrição</td>
             <td><input type="text" name="descricao" class="form-control" /></td>
         </tr>
-        </tr>
+        <tr>
             <td>
                 <input type="submit" value="Enviar" />
             </td>
