@@ -4,16 +4,15 @@ join tiposdevolume as tipoVolume on p.tipoDeVolume_id = tipoVolume.id
 
 
 pedido
- - idCliente
- - status
- - dataCriacao
-
-
+- cliente_id
+- status
+- dataCriacao
+- formaPaga
+ 
 
 itemsDoPedido
-- idProduto
-- idPedido
+- produto_id
+- pedido_id
 - Valor
 - quantidade
-
 
